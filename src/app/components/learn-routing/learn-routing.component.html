@@ -1,0 +1,51 @@
+<h3>📌 What is Routing in Angular?</h3>
+<p class="ms-5">
+  Routing in Angular allows you to navigate between different views (components)
+  in a single-page application (SPA). Instead of reloading the page, Angular
+  dynamically updates the content.
+</p>
+
+<h3 class="mt-5">📌 How to Set Up Routing in Angular 19</h3>
+<p class="ms-5">
+  When creating an Angular project, you can enable routing using:
+  <b>' ng new my-angular-app --routing '</b>
+</p>
+
+<h3 class="mt-5">📌 Types of Routing in Angular</h3>
+<ol class="ms-4">
+  <li>Basic Routing - Navigating between components.</li>
+  <img src="assets/routing/basic-routing.png" />
+
+  <li class="mt-4">Lazy Loading - Load modules only when needed.</li>
+  <img src="assets/routing/lazy-loading.png" />
+
+  <li class="mt-5">Route Guards - Control access to routes.</li>
+  <div class="route-guard d-flex">
+    <div class="simple-routing d-flex align-items-center me-5">
+      <p class="m-0 me-3">Simple Route</p>
+      <button class="btn btn-dark" [routerLink]="''">Home</button>
+    </div>
+    <div class="auth-guard-routing d-flex align-items-center">
+      <p class="m-0 me-3">Simple Route</p>
+      <button class="btn btn-dark" [routerLink]="'/about'">About</button>
+    </div>
+  </div>
+
+  <li class="mt-5">Child Routes - Nested routing inside components.</li>
+  <a routerLink="child-routes">Child-routes</a>
+  <div><router-outlet /></div>
+
+  <li class="mt-5">Dynamic Routing</li>
+  <label for="name" class="me-3">Name</label>
+  <input
+    name="name"
+    type="text"
+    class="input me-3"
+    placeholder="enter your name"
+    [(ngModel)]="userName"
+  />
+  <button class="btn btn-dark" (click)="getGreetings()">Greetings</button>
+
+  <li class="mt-5">Query Parameters</li>
+  <a routerLink="/query-fragment">Query Fragment</a>
+</ol>
