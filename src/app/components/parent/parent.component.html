@@ -1,0 +1,29 @@
+<div class="main d-flex justify-content-around">
+  <div class="parent">
+    <h4 class="mb-3">Parent Component</h4>
+    <div class="input-field d-flex justify-content-center align-items-center">
+      <label for="name" class="me-3 fw-bold">Name</label>
+      <input
+        type="text"
+        class="input-field p-1 me-3"
+        #userName
+        (keyup)="(0)"
+        maxlength="16"
+      />
+      <button class="btn btn-secondary" (click)="setUserName(userName.value)">
+        Send data to child
+      </button>
+    </div>
+    <div class="child-data" *ngIf="receviedEmail != ''">
+      <p class="mt-5">
+        This mail is comming from child component <b>{{ receviedEmail }}.</b>
+      </p>
+    </div>
+  </div>
+  <div class="child">
+    <app-child
+      [UserName]="username"
+      (UserEmail)="receiveEmail($event)"
+    ></app-child>
+  </div>
+</div>

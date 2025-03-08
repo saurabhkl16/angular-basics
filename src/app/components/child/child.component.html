@@ -1,0 +1,15 @@
+<h4 class="mb-3">Child Component</h4>
+<div class="input-field d-flex justify-content-center align-items-center">
+  <label for="email" class="me-3 fw-bold">Email</label>
+  <input type="email" class="input-field p-1 me-3" #UserEmail maxlength="32" />
+  <button
+    class="btn btn-secondary"
+    (click)="sendEmailToParent(UserEmail.value)"
+  >
+    Send data to parent
+  </button>
+</div>
+<p *ngIf="UserName != ''" class="mt-5">
+  Hello <b>{{ UserName }}</b
+  >, How are you bro. Welcome to Child component.
+</p>

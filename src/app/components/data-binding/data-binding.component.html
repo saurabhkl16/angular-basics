@@ -1,0 +1,46 @@
+<div class="data-binding">
+  <div class="event-binding card">
+    <h5 class="mb-5">Event Binding - template to component</h5>
+    <div class="click-btn">
+      <button class="btn btn-secondary w-100" (click)="eventBindingButton()">
+        Click Me
+      </button>
+      <p>Status: {{ eventBindingButtonVal }}</p>
+    </div>
+    <div class="event-input">
+      <input
+        class="input w-100 p-1"
+        (keyup)="onInputChange($event)"
+        placeholder="enter value"
+      />
+      <p>You enterd: {{ eventBindingInputVal }}</p>
+    </div>
+  </div>
+  <div class="one-way-binding card">
+    <!-- <h5>One Way Data Binding</h5> -->
+    <h5 class="mb-5">Interpolition - Component to view (Template)</h5>
+    <p>
+      <b>{{ userName }}</b> you have <b>{{ notification }}</b> unread messages
+      on whatsaap.
+    </p>
+  </div>
+  <div class="attribute-binding card">
+    <h5 class="mb-5">Attribute Binding - Component to view (Template)</h5>
+    <input type="text" class="input me-2 p-1 mb-3" [attr.value]="inputVal" />
+    <button class="btn btn-dark" disabled [attr.type]="btnType">Submit</button>
+  </div>
+  <div class="property-binding card">
+    <h5 class="mb-5">Property Binding - Component to view (Template)</h5>
+    <button
+      class="btn btn-dark mb-2"
+      [disabled]="isDisabled"
+      (click)="handleClickButton()"
+    >
+      {{ disabledButton }}
+    </button>
+    <br />
+    <button class="btn btn-dark mb-2" (click)="toggleDisabledButton()">
+      {{ isDisabled === true ? "Enable above button" : "Disable above button" }}
+    </button>
+  </div>
+</div>

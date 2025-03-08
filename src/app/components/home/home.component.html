@@ -2,7 +2,7 @@
   <div class="routing card" *ngFor="let item of topics">
     <img src="{{ item.image_url }}" alt="routing-icon" height="100px" />
     <h5>{{ item.heading }}</h5>
-    <button [routerLink]="item.path" class="btn btn-success mt-2 w-100 fw-bold">
+    <button [routerLink]="item.path" class="btn btn-secondary mt-2 w-100 fw-bold">
       {{ item.button_name }}
     </button>
   </div>

@@ -1,0 +1,86 @@
+<div class="directives d-flex justify-content-around align-items-center">
+  <div class="structural-directive">
+    <h5>Structural Directive</h5>
+    <div class="if-directive mt-5">
+      <p><b>If Directive</b></p>
+      <p *ngIf="!isAdmin() && !isLogin()">Hello, Guest User.</p>
+      <p *ngIf="!isAdmin() && isLogin()">Hello user, Login Success</p>
+      <p *ngIf="isAdmin() && isLogin()">
+        Hello user, Your admin now. Congrats.
+      </p>
+      <button
+        class="btn btn-secondary me-3"
+        (click)="handleLoginButton()"
+        [disabled]="isAdmin()"
+      >
+        {{ loginButton() }}
+      </button>
+      <button
+        *ngIf="isLogin()"
+        class="btn btn-secondary me-3"
+        (click)="handleAdminButton()"
+      >
+        {{ adminButton() }}
+      </button>
+    </div>
+    <div class="for-directive mt-5">
+      <p><b>For Directive</b></p>
+      <ul *ngFor="let item of user">
+        <li>
+          My name is <b>{{ item.name }} {{ item.surname }}</b> and my id is
+          <b>{{ item.id }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    [ngClass]="{
+      'attribute-directive-dark-mode': isDarkMode,
+      'attribute-directive-light-mode': !isDarkMode
+    }"
+  >
+    <h5>Attribute Directive</h5>
+    <div class="ngClass mt-5">
+      <p><b>ngClass Directive</b></p>
+      <button
+        class="w-100"
+        [ngClass]="{ 'dark-mode-btn': isDarkMode, 'normal-btn': !isDarkMode }"
+        (click)="handleDarkMode()"
+      >
+        {{ isDarkMode ? "Day" : "Night" }}
+      </button>
+    </div>
+    <div class="ngStyle mt-5">
+      <p><b>ngStyle Directive</b></p>
+      <div
+        class="circle"
+        [ngStyle]="{
+          'background-color':
+            signalValue === 'red'
+              ? 'red'
+              : signalValue === 'orange'
+              ? 'orange'
+              : 'green'
+        }"
+      ></div>
+      <button
+        class="btn btn-secondary me-2 w-25"
+        (click)="handleTraficSignal('red')"
+      >
+        Stop
+      </button>
+      <button
+        class="btn btn-secondary me-2 w-25"
+        (click)="handleTraficSignal('orange')"
+      >
+        Ready
+      </button>
+      <button
+        class="btn btn-secondary me-2 w-25"
+        (click)="handleTraficSignal('green')"
+      >
+        Go
+      </button>
+    </div>
+  </div>
+</div>

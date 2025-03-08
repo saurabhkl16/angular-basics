@@ -1,6 +1,12 @@
-header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: aliceblue;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(231, 132, 33);
+  padding: 10px;
+}
+
+main {
+  background-color: rgb(236, 229, 229);
+  height: 100vh;
 }

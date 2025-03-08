@@ -1,0 +1,63 @@
+.structural-directive {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 15px;
+  min-height: 500px;
+  min-width: 350px;
+}
+
+.attribute-directive-dark-mode {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid rgb(20, 19, 19);
+  padding: 15px;
+  min-height: 500px;
+  min-width: 350px;
+}
+
+.attribute-directive-light-mode {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 15px;
+  min-height: 500px;
+  min-width: 350px;
+}
+
+.dark-mode-btn {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid black;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.normal-btn {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  border: 4px solid black;
+  margin-bottom: 20px;
+}

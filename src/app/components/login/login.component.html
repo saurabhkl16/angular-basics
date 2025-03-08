@@ -1,3 +1,34 @@
-<p>login works!</p>
-Name:<input type="text" />
-<button class="btn btn-success" (click)="login()">Login</button>
+<form class="login-form" #loginForm="ngForm" (submit)="getDetails(loginForm)">
+  <h2 class="mt-5 mb-5 text-center">Login Form</h2>
+  <div class="username">
+    <label for="username">UserName</label>
+    <input
+      class="form-control"
+      name="userName"
+      type="text"
+      [(ngModel)]="UserName"
+      required="true"
+      #username="ngModel"
+    />
+    <div *ngIf="username.invalid && username.touched" class="text-danger">
+      <small *ngIf="username.errors?.['required']">username is required</small>
+      <!-- <small *ngIf="username.errors?.['email']">Invalid email format</small> -->
+    </div>
+  </div>
+  <div class="password mt-3">
+    <label for="password">Password</label>
+    <input
+      class="form-control"
+      name="password"
+      type="text"
+      [(ngModel)]="Password"
+      required="true"
+      #password="ngModel"
+    />
+    <div *ngIf="password.invalid && password.touched" class="text-danger">
+      <small *ngIf="password.errors?.['required']">Password is required</small>
+      <!-- <small *ngIf="username.errors?.['email']">Invalid email format</small> -->
+    </div>
+  </div>
+  <button class="btn btn-dark submit mt-3" type="submit">Submit</button>
+</form>
